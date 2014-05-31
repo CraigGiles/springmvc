@@ -16,10 +16,10 @@ public class RegistrationFormValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        RegistrationForm form = (RegistrationForm)target;
+        RegistrationForm form = (RegistrationForm) target;
 
-        validatePassword(form, errors);
         validateUsername(form, errors);
+        validatePassword(form, errors);
         validateEmail(form, errors);
     }
 
@@ -29,11 +29,11 @@ public class RegistrationFormValidator implements Validator {
      * must be of type Email
      * must be unique
      *
-     * @param form RegistrationForm to validate
+     * @param form   RegistrationForm to validate
      * @param errors Errors in the registration form
      */
     private void validateEmail(RegistrationForm form, Errors errors) {
-
+        //TODO use UserRepository to determine if email already exists
     }
 
     /**
@@ -42,11 +42,11 @@ public class RegistrationFormValidator implements Validator {
      * minimum length is 5 characters
      * username must be unique
      *
-     * @param form RegistrationForm to validate
+     * @param form   RegistrationForm to validate
      * @param errors Errors in the registration form
      */
     private void validateUsername(RegistrationForm form, Errors errors) {
-
+        // TODO use UserRepository to determine if username already exists
     }
 
     /**
@@ -55,7 +55,7 @@ public class RegistrationFormValidator implements Validator {
      * Password must be confirmed
      * Password minimum length must be 8 characters
      *
-     * @param form RegistrationForm to validate
+     * @param form   RegistrationForm to validate
      * @param errors Errors in the registration form
      */
     private void validatePassword(RegistrationForm form, Errors errors) {

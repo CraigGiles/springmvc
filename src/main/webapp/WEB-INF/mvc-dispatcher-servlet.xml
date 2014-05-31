@@ -12,6 +12,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+
     <!-- ==================== Service Providers ==================== -->
     <import resource="services/registration.xml" />
 </beans>

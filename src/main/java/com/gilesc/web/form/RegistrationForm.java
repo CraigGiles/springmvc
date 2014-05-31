@@ -1,9 +1,25 @@
 package com.gilesc.web.form;
 
-public class Registration {
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.*;
+
+public class RegistrationForm {
+    @Min(5)
+    @NotEmpty
     private String username;
+
+    @Min(8)
+    @NotEmpty
     private String password;
+
+    @Min(8)
+    @NotEmpty
     private String password_confirmation;
+
+    @Email
+    @NotEmpty
     private String email;
 
     public String getUsername() {

@@ -1,11 +1,9 @@
-package com.gilesc.web.controller;
+package com.gilesc.web.registration;
 
 import com.gilesc.service.registration.RegistrationService;
-import com.gilesc.web.form.RegistrationForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +15,7 @@ import javax.validation.Valid;
 @RequestMapping("/registration")
 public class RegistrationController {
     private RegistrationService registration;
-    private Validator validator;
+    private RegistrationFormValidator validator;
 
     @RequestMapping(method = RequestMethod.GET, value = "")
     public ModelAndView index() {
@@ -26,16 +24,13 @@ public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.POST, value = "")
     public String register(@Valid @ModelAttribute("registration") RegistrationForm form, BindingResult result) {
-        String returnValue = null;
-
         validator.validate(form, result);
-        if (result.hasErrors()) {
-            returnValue = "registration/registration";
-        } else {
-            returnValue = "redirect:/";
-        }
 
-        return returnValue;
+        if (result.hasErrors()) {
+            return "registration/registration";
+        } else {
+            return "registration/registration";
+        }
     }
 
     @Autowired
@@ -44,7 +39,7 @@ public class RegistrationController {
     }
 
     @Autowired
-    public void setValidator(Validator validator) {
+    public void setValidator(RegistrationFormValidator validator) {
         this.validator = validator;
     }
 }

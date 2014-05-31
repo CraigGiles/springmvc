@@ -1,6 +1,6 @@
 package com.gilesc.service.registration;
 
-import com.gilesc.web.form.RegistrationForm;
+import com.gilesc.web.registration.RegistrationForm;
 
 public class RegistrationService {
     public boolean register(RegistrationForm contact) {

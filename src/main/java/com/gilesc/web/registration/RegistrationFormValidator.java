@@ -1,10 +1,10 @@
-package com.gilesc.service.registration;
+package com.gilesc.web.registration;
 
-import com.gilesc.web.form.RegistrationForm;
+import com.gilesc.web.validation.FormValidator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-public class RegistrationFormValidator implements Validator {
+public class RegistrationFormValidator extends FormValidator implements Validator {
     static final String USERNAME = "username";
     static final String PASSWORD = "password";
     static final String EMAIL = "email";
@@ -16,6 +16,8 @@ public class RegistrationFormValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
+        super.validate(target, errors);
+
         RegistrationForm form = (RegistrationForm) target;
 
         validateUsername(form, errors);

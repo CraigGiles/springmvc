@@ -9,15 +9,16 @@
     <context:component-scan base-package="com.gilesc"/>
 
     <!-- ==================== Properties ==================== -->
-    <context:property-placeholder location="classpath:application.properties" />
+    <context:property-placeholder location="classpath:config/application.properties" />
+
+    <!-- ==================== Validators ==================== -->
+    <import resource="classpath:validator.xml" />
+
+    <!-- ==================== Service Providers ==================== -->
+    <import resource="classpath:services/registration.xml" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
-
-    <!-- ==================== Service Providers ==================== -->
-    <import resource="services/registration.xml" />
 </beans>

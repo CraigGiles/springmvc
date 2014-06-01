@@ -5,6 +5,10 @@
 </head>
 <body>
 <h1>Registration Form</h1>
+<div class="error">
+    ${exception}
+</div>
+
 <form:form method="post" action="registration" modelAttribute="registration">
     <form:label path="username">User Name</form:label>
     <form:input path="username"></form:input>
@@ -27,6 +31,7 @@
     <br />
 
     <input type="submit" value="Submit" />
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form:form>
 </body>
 </html>

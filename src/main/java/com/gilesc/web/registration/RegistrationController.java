@@ -17,6 +17,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/registration")
 public class RegistrationController {
+    private RegistrationForm form;
     private RegistrationService registration;
     private RegistrationFormValidator validator;
 
@@ -27,11 +28,12 @@ public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.POST, value = "")
     public String register(@Valid @ModelAttribute("registration") RegistrationForm form, BindingResult result) throws RegistrationException {
-        validator.validate(form, result);
+//        validator.validate(form, result);
 
         if (result.hasErrors()) {
             return "registration/registration";
         } else {
+            this.form = form;
             registration.register(form);
             return "registration/registration";
         }
@@ -45,5 +47,16 @@ public class RegistrationController {
     @Autowired
     public void setValidator(RegistrationFormValidator validator) {
         this.validator = validator;
+    }
+
+    @ExceptionHandler(RegistrationException.class)
+    public ModelAndView handleError(HttpServletRequest req, Exception exception) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("exception", exception.getMessage());
+        mav.addObject("url", req.getRequestURL());
+        mav.addObject("registration", form);
+        mav.setViewName("registration/registration");
+        return mav;
     }
 }

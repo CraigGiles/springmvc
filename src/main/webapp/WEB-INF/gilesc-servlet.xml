@@ -8,17 +8,13 @@
 
     <context:component-scan base-package="com.gilesc"/>
 
-    <!-- ==================== Properties ==================== -->
-    <context:property-placeholder location="classpath:config/application.properties" />
-
-    <!-- ==================== Validators ==================== -->
-    <import resource="classpath:validator.xml" />
+    <!-- ==================== Basic Configuration ==================== -->
+    <import resource="classpath:spring/gilesc-configuration.xml" />
+    <import resource="classpath:spring/gilesc-formvalidator.xml" />
+    <import resource="classpath:spring/gilesc-pages.xml" />
+    <import resource="classpath:spring/gilesc-properties.xml" />
 
     <!-- ==================== Service Providers ==================== -->
     <import resource="classpath:services/registration.xml" />
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
 </beans>

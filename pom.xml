@@ -8,6 +8,18 @@
     <version>1.0-SNAPSHOT</version>
     <name>gilesc</name>
 
+    <developers>
+        <developer>
+            <id>craig.giles</id>
+            <name>Craig Giles</name>
+            <email>craiggiles9@gmail.com</email>
+            <roles>
+                <role>Author</role>
+            </roles>
+            <organization>http://www.gilesc.com</organization>
+        </developer>
+    </developers>
+
     <!-- ==================== Properties ==================== -->
     <properties>
         <java.version>1.7</java.version>

@@ -3,6 +3,7 @@ package com.gilesc.web.registration;
 import com.gilesc.service.registration.RegistrationException;
 import com.gilesc.service.registration.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -23,12 +24,13 @@ public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.GET, value = "")
     public ModelAndView index() {
-        return new ModelAndView("registration/registration", "registration", new RegistrationForm());
+        ModelAndView mv = new ModelAndView("registration/registration", "registration", new RegistrationForm());
+        return mv;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "")
     public String register(@Valid @ModelAttribute("registration") RegistrationForm form, BindingResult result) throws RegistrationException {
-//        validator.validate(form, result);
+        validator.validate(form, result);
 
         if (result.hasErrors()) {
             return "registration/registration";
@@ -57,6 +59,7 @@ public class RegistrationController {
         mav.addObject("url", req.getRequestURL());
         mav.addObject("registration", form);
         mav.setViewName("registration/registration");
+
         return mav;
     }
 }

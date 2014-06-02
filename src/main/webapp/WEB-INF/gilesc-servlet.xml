@@ -7,15 +7,16 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.gilesc"/>
+    <import resource="classpath:spring/gilesc-properties.xml" />
 
     <!-- ==================== Basic Configuration ==================== -->
+    <import resource="classpath:spring/gilesc-database.xml" />
     <import resource="classpath:spring/gilesc-configuration.xml" />
     <import resource="classpath:spring/gilesc-formvalidator.xml" />
     <import resource="classpath:spring/gilesc-pages.xml" />
-    <import resource="classpath:spring/gilesc-properties.xml" />
-    <import resource="classpath:spring/gilesc-database.xml" />
 
     <!-- ==================== Service Providers ==================== -->
     <import resource="classpath:services/registration.xml" />
+
 
 </beans>

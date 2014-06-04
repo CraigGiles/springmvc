@@ -11,3 +11,5 @@ Learning Spring MVC 4.0 by developing simple web apps that use the framework. Ne
 
 * Exception Handling of RegistrationException
   * RegistrationException can be thrown at any time by the domain layer of the application. Once this exception is thrown, the presentation layer responsible for spawning the request will handle it. For the web framework, we will simply re-route to an error page but eventually we will handle it a little better. 
+
+* Persistent storage with Hibernate

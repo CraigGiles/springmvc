@@ -1,14 +1,19 @@
 package com.gilesc;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="pizza")
 public class Pizza {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
+    @Column(nullable=false)
     private long id;
+
+    @Column(nullable=true)
     private String name;
+
+    @Column(nullable=true)
     private double price;
 
     public long getId() {

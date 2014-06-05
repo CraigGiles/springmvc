@@ -1,11 +1,8 @@
 package com.gilesc.web.registration;
 
-import com.gilesc.Pizza;
-import com.gilesc.PizzaDAO;
 import com.gilesc.service.registration.RegistrationException;
 import com.gilesc.service.registration.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 @RequestMapping("/registration")

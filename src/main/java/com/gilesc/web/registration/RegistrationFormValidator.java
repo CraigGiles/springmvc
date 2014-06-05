@@ -35,7 +35,7 @@ public class RegistrationFormValidator extends FormValidator implements Validato
      * @param errors Errors in the registration form
      */
     private void validateEmail(RegistrationForm form, Errors errors) {
-        //TODO use UserRepository to determine if email already exists
+        //TODO use UserDAO to determine if email already exists
     }
 
     /**
@@ -48,7 +48,7 @@ public class RegistrationFormValidator extends FormValidator implements Validato
      * @param errors Errors in the registration form
      */
     private void validateUsername(RegistrationForm form, Errors errors) {
-        // TODO use UserRepository to determine if username already exists
+        // TODO use UserDAO to determine if username already exists
     }
 
     /**

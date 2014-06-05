@@ -29,5 +29,5 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <bean id="PizzaDAO" class="com.gilesc.PizzaDAO" />
+    <bean id="UserDAO" class="com.gilesc.dataaccess.hibernate.UserHibernate" />
 </beans>

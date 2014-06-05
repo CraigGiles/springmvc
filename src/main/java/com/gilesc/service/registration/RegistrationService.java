@@ -1,9 +1,7 @@
 package com.gilesc.service.registration;
 
-import com.gilesc.web.registration.RegistrationForm;
-
 public class RegistrationService {
-    public boolean register(RegistrationForm contact) throws RegistrationException {
+    public boolean register(RegistrationInformation information) throws RegistrationException {
         throw new RegistrationException("Testing registration exception handling");
     }
 }

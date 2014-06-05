@@ -1,8 +1,9 @@
 package com.gilesc.web.registration;
 
+import com.gilesc.service.registration.RegistrationInformation;
 import org.hibernate.validator.constraints.*;
 
-public class RegistrationForm {
+public class RegistrationForm implements RegistrationInformation {
     @Length(min=5, max=100)
     @NotEmpty
     private String username;

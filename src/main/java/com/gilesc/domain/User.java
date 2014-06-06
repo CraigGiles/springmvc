@@ -12,6 +12,7 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private boolean email_verified;
     private Date created_at;
     private Date updated_at;
 
@@ -31,6 +32,10 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public boolean isEmail_verified() {
+        return email_verified;
     }
 
     public Date getCreated_at() {

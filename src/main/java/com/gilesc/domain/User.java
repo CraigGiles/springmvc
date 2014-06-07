@@ -44,7 +44,7 @@ public class User {
         return email;
     }
 
-    public boolean isEmail_verified() {
+    public boolean isEmailVerified() {
         return email_verified;
     }
 
@@ -52,11 +52,11 @@ public class User {
         return address;
     }
 
-    public Date getCreated_at() {
+    public Date getDateCreated() {
         return created_at;
     }
 
-    public Date getUpdated_at() {
+    public Date getLastUpdated() {
         return updated_at;
     }
 

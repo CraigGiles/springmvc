@@ -1,5 +1,7 @@
 package com.gilesc.domain;
 
+import sun.jvm.hotspot.debugger.cdbg.basic.LazyType;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,13 +15,21 @@ public class User {
     private String password;
     private String email;
     private boolean email_verified;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="address_id")
+    private Address address;
     private Date created_at;
     private Date updated_at;
 
-    public User(String username, String password, String email) {
+    protected User() {
+    }
+
+    public User(String username, String password, String email, Address address) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.address = address;
     }
 
     public String getUsername() {
@@ -36,6 +46,10 @@ public class User {
 
     public boolean isEmail_verified() {
         return email_verified;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 
     public Date getCreated_at() {

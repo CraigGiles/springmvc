@@ -20,6 +20,22 @@ public class RegistrationForm implements RegistrationInformation {
     @NotEmpty
     private String email;
 
+    @Length(min=4)
+    @NotEmpty
+    private String street;
+
+    @Length(min=4)
+    @NotEmpty
+    private String city;
+
+    @Length(min=2, max=2)
+    @NotEmpty
+    private String state;
+
+    @Length(min=5, max=5)
+    @NotEmpty
+    private String zipcode;
+
     public String getUsername() {
         return username;
     }
@@ -50,5 +66,37 @@ public class RegistrationForm implements RegistrationInformation {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 }

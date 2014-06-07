@@ -29,5 +29,6 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <bean id="UserDAO" class="com.gilesc.dataaccess.hibernate.UserHibernate" />
+    <bean id="UserDAO" class="com.gilesc.dataaccess.hibernate.UserHB" />
+    <bean id="AddressDAO" class="com.gilesc.dataaccess.hibernate.AddressHB" />
 </beans>

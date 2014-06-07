@@ -33,6 +33,26 @@
         <form:errors path="email" cssclass="error"></form:errors>
         <br/>
 
+        <form:label path="street">Street Address:</form:label>
+        <form:input path="street"></form:input>
+        <form:errors path="street" cssclass="error"></form:errors>
+        <br/>
+
+        <form:label path="city">City:</form:label>
+        <form:input path="city"></form:input>
+        <form:errors path="city" cssclass="error"></form:errors>
+        <br/>
+
+        <form:label path="state">State Abbreviation:</form:label>
+        <form:input path="state"></form:input>
+        <form:errors path="state" cssclass="error"></form:errors>
+        <br/>
+
+        <form:label path="zipcode">Zipcode:</form:label>
+        <form:input path="zipcode"></form:input>
+        <form:errors path="zipcode" cssclass="error"></form:errors>
+        <br/>
+
         <input type="submit" value="Submit"/>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form:form>

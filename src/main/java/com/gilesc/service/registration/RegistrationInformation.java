@@ -5,4 +5,8 @@ public interface RegistrationInformation {
     public String getPassword();
     public String getPassword_confirmation();
     public String getEmail();
+    public String getStreet();
+    public String getCity();
+    public String getState();
+    public String getZipcode();
 }

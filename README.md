@@ -15,3 +15,5 @@ Learning Spring MVC 4.0 by developing simple web apps that use the framework. Ne
 * Persistent storage with Hibernate
   * Registration of a Domain object (User) through a Data Access Object (UserDAO)
   * Automatic timestamp of created_at and updated_at for User object
+  * Object relationships: User has an Address which is set up as a one-to-one relationship. 
+  * Loading a user via username from database

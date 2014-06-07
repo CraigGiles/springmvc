@@ -31,7 +31,6 @@ public class RegistrationService {
 
             userDAO.save(user);
         } catch (ConstraintViolationException ex) {
-//            String msg = (ex.getConstraintName().equals("username")) ? "A user with this username already exists." : "A user with this email already exists.";
             String msg = ex.getSQLException().getMessage();
             throw new RegistrationException(msg);
         }
